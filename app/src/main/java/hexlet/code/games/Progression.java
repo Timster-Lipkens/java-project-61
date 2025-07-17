@@ -1,4 +1,7 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Common;
+import hexlet.code.Greet;
 
 public class Progression {
     public static void game() {
