@@ -1,20 +1,19 @@
 package hexlet.code.games;
 
-import hexlet.code.Common;
-import hexlet.code.Greet;
+import hexlet.code.Engine;
 
 public class Even {
     public static void game() {
-        String name = Greet.name();
+        String name = Engine.name();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'."); //rule
         boolean check = true;
         for (int i = 0; i < 3; i++) {
-            if ( !Common.check(Even.question(), Common.answer()) ) { //cycle
+            if ( !Engine.check(Even.question(), Engine.answer()) ) { //cycle
                 check = false;
                 break;
             }
         }
-        Common.result(check, name);
+        Engine.result(check, name);
     }
     public static String question() {
         int number = (int) (Math.random() * 100);

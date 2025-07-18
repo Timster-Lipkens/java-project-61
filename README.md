@@ -1,3 +1,6 @@
+### Content:
+This project is Brain Games. It contains a menu-App with five games, a common Engine and the games themselves. The project is written in Java and runs accordingly. Below are tests and demonstrations.
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Timster-Lipkens/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Timster-Lipkens/java-project-61/actions)
 

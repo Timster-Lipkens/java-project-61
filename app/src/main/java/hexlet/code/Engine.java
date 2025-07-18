@@ -1,8 +1,15 @@
 package hexlet.code;
 import java.util.Scanner;
 
-public class Common {
-    // Logic: specific question, universal other.
+public class Engine { // Common.
+    public static String name() {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        System.out.println("Hello, " + name + "!");
+        return name;
+    }
     public static String answer() {
         System.out.print("Your answer: ");
         Scanner scanner = new Scanner(System.in);
@@ -22,4 +29,4 @@ public class Common {
         if (check) System.out.println("Congratulations, " + name + "!");
         else System.out.println("Let's try again, " + name + "!");
     }
-}
+} // Logic: specific question, universal other.

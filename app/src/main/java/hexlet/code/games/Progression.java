@@ -1,20 +1,19 @@
 package hexlet.code.games;
 
-import hexlet.code.Common;
-import hexlet.code.Greet;
+import hexlet.code.Engine;
 
 public class Progression {
     public static void game() {
-        String name = Greet.name();
+        String name = Engine.name();
         System.out.println("What number is missing in the progression?"); //rule
         boolean check = true;
         for (int i = 0; i < 3; i++) {
-            if ( !Common.check(Progression.question(), Common.answer()) ) { //cycle
+            if ( !Engine.check(Progression.question(), Engine.answer()) ) { //cycle
                 check = false;
                 break;
             }
         }
-        Common.result(check, name);
+        Engine.result(check, name);
     }
     public static String question() {
         int number = (int) (Math.random() * 100 + 1);

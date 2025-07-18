@@ -1,20 +1,19 @@
 package hexlet.code.games;
 
-import hexlet.code.Common;
-import hexlet.code.Greet;
+import hexlet.code.Engine;
 
 public class GCD {
     public static void game() {
-        String name = Greet.name();
+        String name = Engine.name();
         System.out.println("Find the greatest common divisor of given numbers."); //rule
         boolean check = true;
         for (int i = 0; i < 3; i++) {
-            if ( !Common.check(GCD.question(), Common.answer()) ) { //cycle
+            if ( !Engine.check(GCD.question(), Engine.answer()) ) { //cycle
                 check = false;
                 break;
             }
         }
-        Common.result(check, name);
+        Engine.result(check, name);
     }
     public static String question() {
         int number1 = (int) (Math.random() * 100);

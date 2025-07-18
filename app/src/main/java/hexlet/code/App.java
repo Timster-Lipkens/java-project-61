@@ -18,7 +18,7 @@ public class App {
         String choice = scanner.nextLine(); //int choice = scanner.nextInt();
         switch(choice) {
             case "1":
-                Greet.name();
+                Cli.name();
                 break;
             case "2":
                 Even.game();
