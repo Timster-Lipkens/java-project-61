@@ -35,7 +35,8 @@ public class App {
             case "6":
                 Prime.game();
                 break;
-            //default:
+            default:
+                throw new RuntimeException("The user broke the rules.");
         }
     }
 }

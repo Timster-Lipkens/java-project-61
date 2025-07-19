@@ -19,7 +19,7 @@ public class GCD {
         int number1 = (int) (Math.random() * 100);
         int number2 = (int) (Math.random() * 100);
         System.out.println("Question: " + number1 + " " + number2);
-        int Euclid = 0;
+        int Euclid; //0
         while (number2 > 0) {
             Euclid = number1 % number2;
             number1 = number2;

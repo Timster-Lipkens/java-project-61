@@ -21,15 +21,13 @@ public class Calc {
         int number2 = (int) (Math.random() * 100);
         char operation2 = '+'; //String?
         int result = number1 + number2;
-        switch(operation1) {
-            case 1:
-                operation2 = '-';
-                result = number1 - number2;
-                break;
-            case 2:
-                operation2 = '*';
-                result = number1 * number2;
-                break;
+        if (operation1 == 1) { //switch
+            operation2 = '-';
+            result = number1 - number2;
+        }
+        if (operation1 == 2) {
+            operation2 = '*';
+            result = number1 * number2;
         }
         System.out.println("Question: " + number1 + " " + operation2 + " " + number2);
         return "" + result;
