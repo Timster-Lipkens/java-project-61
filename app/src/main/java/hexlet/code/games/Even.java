@@ -4,21 +4,15 @@ import hexlet.code.Engine;
 
 public class Even {
     public static void game() {
-        String name = Engine.name();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'."); //rule
-        boolean check = true;
-        for (int i = 0; i < 3; i++) {
-            if ( !Engine.check(Even.question(), Engine.answer()) ) { //cycle
-                check = false;
-                break;
-            }
-        }
-        Engine.result(check, name);
+        String[] specific = new String[1 + 3 * 2];
+        specific[0] = "Answer 'yes' if the number is even, otherwise answer 'no'."; //rule
+        for (int i = 1; i < 3 * 2; i += 2) Even.principle(specific, i);
+        Engine.logic(specific);
     }
-    public static String question() {
+    public static void principle(String[] specific, int i) {
         int number = (int) (Math.random() * 100);
-        System.out.println("Question: " + number);
-        if (number % 2 == 0) return "yes";
-        else return "no";
+        specific[i] = "" + number; //question
+        if (number % 2 == 0) specific[i + 1] = "yes"; //solution
+        else specific[i + 1] = "no";
     }
 }

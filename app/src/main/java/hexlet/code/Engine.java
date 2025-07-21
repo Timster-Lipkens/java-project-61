@@ -1,32 +1,29 @@
 package hexlet.code;
 import java.util.Scanner;
 
-public class Engine { // Common.
-    public static String name() {
-        System.out.println("Welcome to the Brain Games!");
+public class Engine {
+    public static void logic(String[] specific) {
+        System.out.println("Welcome to the Brain Games!"); //name
         System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
         System.out.println("Hello, " + name + "!");
-        return name;
-    }
-    public static String answer() {
-        System.out.print("Your answer: ");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine(); // String answer = scanner.nextLine();
-    }
-    public static boolean check(String question, String answer) {
-        if (question.equals(answer)) {
-            System.out.println("Correct!");
-            return true;
+        System.out.println(specific[0]); //rule
+        boolean check = true;
+        for (int i = 1; i < 3 * 2; i += 2) {
+            System.out.print("Question: ");
+            System.out.println(specific[i]);
+            System.out.print("Your answer: ");
+            Scanner scanner2 = new Scanner(System.in);
+            String answer = scanner2.nextLine();
+            if (specific[i + 1].equals(answer)) System.out.println("Correct!");
+            else {
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + specific[i + 1] + "'.");
+                check = false;
+                break;
+            }
         }
-        else {
-            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + question + "'.");
-            return false;
-        }
-    }
-    public static void result(boolean check, String name) {
-        if (check) System.out.println("Congratulations, " + name + "!");
+        if (check) System.out.println("Congratulations, " + name + "!"); //result
         else System.out.println("Let's try again, " + name + "!");
     }
-} // Logic: specific question, universal other.
+}
