@@ -4,21 +4,24 @@ import hexlet.code.Engine;
 
 public class GCD {
     public static void game() {
-        String[] specific = new String[1 + 3 * 2];
-        specific[0] = "Find the greatest common divisor of given numbers."; //rule
-        for (int i = 1; i < 3 * 2; i += 2) GCD.principle(specific, i);
-        Engine.logic(specific);
+        final String RULE = "Find the greatest common divisor of given numbers.";
+        String[][] specific = new String[3][2];
+        for (int i = 0; i < 3; i++) GCD.principle(specific, i);
+        Engine.logic(RULE, specific);
     }
-    public static void principle(String[] specific, int i) {
+    public static void principle(String[][] specific, int i) {
         int number1 = (int) (Math.random() * 100) + 1;
         int number2 = (int) (Math.random() * 100);
-        specific[i] = number1 + " " + number2;
+        specific[i][0] = number1 + " " + number2;
+        specific[i][1] = "" + GCD.Euclid(number1, number2);
+    }
+    public static int Euclid(int number1, int number2) {
         int Euclid; //1
         while (number2 > 0) {
             Euclid = number1 % number2;
             number1 = number2;
             number2 = Euclid;
         }
-        specific[i + 1] = "" + number1;
+        return number1;
     }
 }
