@@ -25,8 +25,7 @@ public class Progression {
             if (numbers == secret) {
                 specific[i][0] += ".. ";
                 secret = number;
-            }
-            else specific[i][0] += number + " ";
+            } else specific[i][0] += number + " ";
             number += step;
             numbers--;
         }

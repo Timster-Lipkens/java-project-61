@@ -16,7 +16,7 @@ public class App {
         System.out.print("Your choice: ");
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.nextLine(); //int choice = scanner.nextInt();
-        switch(choice) {
+        switch (choice) {
             case "1":
                 Cli.name();
                 break;
