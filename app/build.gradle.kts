@@ -1,6 +1,6 @@
 plugins {
     application
-    id("com.github.ben-manes.versions") version "0.39.0"
+    //id("com.github.ben-manes.versions") version "0.39.0"
     checkstyle
     id("org.sonarqube") version "6.2.0.5505"
 }
@@ -26,8 +26,4 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
