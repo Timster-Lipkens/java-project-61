@@ -4,10 +4,12 @@ import hexlet.code.Engine;
 
 public class Calc {
     public static void game() {
-        final String RULE = "What is the result of the expression?";
+        final String rule = "What is the result of the expression?";
         String[][] specific = new String[3][2];
-        for (int i = 0; i < 3; i++) Calc.principle(specific, i);
-        Engine.logic(RULE, specific);
+        for (int i = 0; i < 3; i++) {
+            Calc.principle(specific, i);
+        }
+        Engine.logic(rule, specific);
     }
     public static void principle(String[][] specific, int i) {
         int number1 = (int) (Math.random() * 100);
