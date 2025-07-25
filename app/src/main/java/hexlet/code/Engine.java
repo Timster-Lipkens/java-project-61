@@ -2,6 +2,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
+    public static final int ROUNDS = 3;
     public static void logic(String rule, String[][] specific) {
         System.out.println("Welcome to the Brain Games!"); //name
         System.out.print("May I have your name? ");
@@ -10,7 +11,7 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         System.out.println(rule); //body
         boolean check = true;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < ROUNDS; i++) {
             System.out.print("Question: ");
             System.out.println(specific[i][0]);
             System.out.print("Your answer: ");

@@ -40,7 +40,7 @@ public class App {
                 Prime.game();
                 break;
             default:
-                throw new RuntimeException("The user broke the rules.");
+                throw new RuntimeException("The user broke the rules and wrote: " + choice);
         }
     }
 }

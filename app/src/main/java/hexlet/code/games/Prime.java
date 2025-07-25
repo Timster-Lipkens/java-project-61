@@ -4,31 +4,27 @@ import hexlet.code.Engine;
 
 public class Prime {
     public static void game() {
-        final String rule = "Answer 'yes' if the number is prime, otherwise answer 'no'.";
+        final String rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] specific = new String[3][2];
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Engine.ROUNDS; i++) {
             Prime.principle(specific, i);
         }
         Engine.logic(rule, specific);
     }
     public static void principle(String[][] specific, int i) {
-        int number = (int) (Math.random() * 100 + 3);
+        int number = (int) (Math.random() * 100 + 3); //conditional limit (not the first prime numbers)
         specific[i][0] = "" + number;
-        specific[i][1] = Prime.check(number);
+        specific[i][1] = (Prime.isPrime(number)) ? "yes" : "no";
     }
-    public static String check(int number) {
+    public static boolean isPrime(int number) {
         var limit = Math.sqrt(number);
         int i2 = 2;
         while (i2 < limit) {
-            if (number % i2 == 0) {
+            if (number % i2 == 0) { //the number is not prime
                 break;
             }
             i2++;
         }
-        if (i2 < limit) {
-            return "no";
-        } else {
-            return "yes";
-        }
+        return !(i2 < limit); //true, if the number is prime
     }
 }
