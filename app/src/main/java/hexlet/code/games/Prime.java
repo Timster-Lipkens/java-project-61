@@ -19,7 +19,7 @@ public class Prime {
     public static boolean isPrime(int number) {
         var limit = Math.sqrt(number);
         int i2 = 2;
-        while (i2 < limit) {
+        while (i2 <= limit) {
             if (number % i2 == 0) { //the number is not prime
                 break;
             }
