@@ -2,7 +2,6 @@ plugins {
     application
     id("com.github.ben-manes.versions") version "0.39.0"
     checkstyle
-    id("org.sonarqube") version "6.2.0.5505"
 }
 
 application {
@@ -11,6 +10,10 @@ application {
 
 tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
+}
+
+plugins {
+    id("org.sonarqube") version "6.2.0.5505"
 }
 
 sonar {
