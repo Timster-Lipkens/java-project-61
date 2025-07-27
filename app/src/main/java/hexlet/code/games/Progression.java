@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 public class Progression {
     public static void game() {
         final String rule = "What number is missing in the progression?";
-        String[][] specific = new String[3][2];
+        String[][] specific = new String[Engine.ROUNDS][2]; //rounds and question-solution
         for (int i = 0; i < Engine.ROUNDS; i++) {
             Progression.principle(specific, i);
         }
@@ -13,8 +13,8 @@ public class Progression {
     }
     public static void principle(String[][] specific, int i) {
         int number = (int) (Math.random() * 100 + 1); //conditional limit (natural numbers)
-        int numbers = (int) (Math.random() * 10 + 5); //randomization of progression
-        int step = (int) (Math.random() * 20 - 10); //the step is not only positive
+        final int numbers = (int) (Math.random() * 10 + 5); //randomization of progression
+        final int step = (int) (Math.random() * 20 - 10); //the step is not only positive
         int secret = (int) (Math.random() * (numbers - 1) + 1); //the secret is inside
         for (int i2 = 0; i2 < Engine.ROUNDS; i2++) { //replacement null
             specific[i][0] = "";

@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int ROUNDS = 3;
+    public static final int RANDOM = 100;
     public static void logic(String rule, String[][] specific) {
         System.out.println("Welcome to the Brain Games!"); //name
         System.out.print("May I have your name? ");
