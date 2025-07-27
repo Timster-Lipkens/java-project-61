@@ -12,7 +12,7 @@ public class Progression {
         Engine.logic(rule, specific);
     }
     public static void principle(String[][] specific, int i) {
-        int number = (int) (Math.random() * 100 + 1); //conditional limit (natural numbers)
+        int number = (int) (Math.random() * Engine.RANDOM + 1); //conditional limit (natural numbers)
         final int numbers = (int) (Math.random() * 10 + 5); //randomization of progression
         final int step = (int) (Math.random() * 20 - 10); //the step is not only positive
         int secret = (int) (Math.random() * (numbers - 1) + 1); //the secret is inside

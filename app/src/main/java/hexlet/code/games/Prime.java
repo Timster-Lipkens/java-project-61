@@ -12,7 +12,7 @@ public class Prime {
         Engine.logic(rule, specific);
     }
     public static void principle(String[][] specific, int i) {
-        int number = (int) (Math.random() * Engine.RANDOM + 3); //conditional limit (not the first prime numbers)
+        final int number = (int) (Math.random() * Engine.RANDOM + 3); //conditional limit (not the first prime numbers)
         specific[i][0] = "" + number;
         specific[i][1] = (Prime.isPrime(number)) ? "yes" : "no";
     }
