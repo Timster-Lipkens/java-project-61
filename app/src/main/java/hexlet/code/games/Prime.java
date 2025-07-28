@@ -26,6 +26,6 @@ public class Prime {
             }
             i2++;
         }
-        return !(i2 < limit); //true, if the number is prime
+        return !(i2 <= limit); //true, if the number is prime
     }
 }
