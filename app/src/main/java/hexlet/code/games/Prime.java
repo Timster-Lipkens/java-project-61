@@ -18,7 +18,7 @@ public class Prime {
         specific[i][1] = (Prime.isPrime(number)) ? "yes" : "no";
     }
     public static boolean isPrime(int number) {
-        var limit = Math.sqrt(number);
+        int limit = (int) Math.sqrt(number);
         int i2 = 2;
         while (i2 <= limit) {
             if (number % i2 == 0) { //the number is not prime
