@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Randomizations;
 
 public class Progression {
     public static void game() {
@@ -12,28 +13,23 @@ public class Progression {
         Engine.logic(rule, specific);
     }
     public static void principle(String[][] specific, int i) {
-        int number = (int) (Math.random() * Engine.RANDOM + 1); //conditional limit (natural numbers)
-        final int numbers = (int) (Math.random() * 10 + 5); //randomization of progression
-        final int step = (int) (Math.random() * 20 - 10); //the step is not only positive
-        int secret = (int) (Math.random() * (numbers - 1) + 1); //the secret is inside
-        for (int i2 = 0; i2 < Engine.ROUNDS; i2++) { //replacement null
-            specific[i][0] = "";
-            specific[i][1] = "";
-        }
-        specific[i][0] = Progression.expression(specific, i, number, numbers, step, secret);
+        int number = Randomizations.generateNumber(1, Engine.RANDOM); //conditional limit (natural numbers)
+        final int step = Randomizations.generateNumber(-10, 10); //the step is not only positive
+        final int numbers = Randomizations.generateNumber(5, 15); //randomization of progression
+        int secret = Randomizations.generateNumber(0, numbers - 1); //the secret is inside
+
+        String[] progression = Progression.makeProgression(number, step, numbers); //full
+        specific[i][1] = progression[secret];
+        progression[secret] = ".."; //we hide the secret
+        specific[i][0] = String.join(" ", progression);
     }
-    public static String expression(String[][] specific, int i, int number, int numbers, int step, int secret) {
-        StringBuilder expression = new StringBuilder();
-        while (numbers > 0) {
-            if (numbers == secret) {
-                expression.append(".. ");
-                specific[i][1] = "" + number; //Integer-
-            } else {
-                expression.append(number).append(" ");
-            }
+    public static String[] makeProgression(int number, int step, int numbers) {
+        String[] result = new String[numbers];
+        result[0] = "" + number;
+        for (int i = 1; i < numbers; i++) {
             number += step;
-            numbers--;
+            result[i] = "" + number;
         }
-        return expression.toString();
+        return result;
     }
 }

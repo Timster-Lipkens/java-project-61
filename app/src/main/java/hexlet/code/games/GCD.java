@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Randomizations;
 
 public class GCD {
     public static void game() {
@@ -12,8 +13,8 @@ public class GCD {
         Engine.logic(rule, specific);
     }
     public static void principle(String[][] specific, int i) {
-        int number1 = (int) (Math.random() * Engine.RANDOM) + 1; //zero divided by zero is undefined
-        int number2 = (int) (Math.random() * Engine.RANDOM); //conditional limit
+        int number1 = Randomizations.generateNumber(1, Engine.RANDOM); //zero divided by zero is indefinitely
+        int number2 = Randomizations.generateNumber(0, Engine.RANDOM); //conditional limit
         specific[i][0] = number1 + " " + number2;
         specific[i][1] = "" + GCD.euclid(number1, number2);
     }

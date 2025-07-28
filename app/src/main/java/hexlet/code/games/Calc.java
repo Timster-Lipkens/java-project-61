@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Randomizations;
 
 public class Calc {
     public static void game() {
@@ -12,30 +13,23 @@ public class Calc {
         Engine.logic(rule, specific);
     }
     public static void principle(String[][] specific, int i) {
-        int number1 = (int) (Math.random() * Engine.RANDOM); //conditional limit
-        final int operation1 = (int) (Math.random() * 3); //0, 1, 2 (three possible operations)
-        int number2 = (int) (Math.random() * Engine.RANDOM);
-        specific[i][0] = Calc.expression(number1, operation1, number2); //может операцию в константу общую?
-        specific[i][1] = Calc.result(number1, operation1, number2);
+        int number1 = Randomizations.generateNumber(0, Engine.RANDOM); //conditional limit
+        final char[] operations = {'+', '-', '*', '+'}; //fourth option for improbably Math.random() == 1
+        final char operation = operations[Randomizations.generateNumber(0, 3)]; //three options are equiprobable
+        int number2 = Randomizations.generateNumber(0, Engine.RANDOM);
+        specific[i][0] = number1 + " " + operation + " " + number2;
+        specific[i][1] = "" + Calc.calculate(number1, operation, number2);
     }
-    public static String expression(int number1, int operation1, int number2) {
-        char operation2 = '+';
-        if (operation1 == 1) { //switch
-            operation2 = '-';
+    public static int calculate(int number1, char operation, int number2) {
+        switch (operation) { //Can ->
+            case '+':
+                return number1 + number2;
+            case '-':
+                return number1 - number2;
+            case '*':
+                return number1 * number2;
+            default:
+                throw new RuntimeException("The programmer made a mistake with randomization: " + operation);
         }
-        if (operation1 == 2) {
-            operation2 = '*';
-        }
-        return number1 + " " + operation2 + " " + number2; //question
-    }
-    public static String result(int number1, int operation1, int number2) {
-        int result = number1 + number2;
-        if (operation1 == 1) { //switch
-            result = number1 - number2;
-        }
-        if (operation1 == 2) {
-            result = number1 * number2;
-        }
-        return "" + result; //solution
     }
 }

@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Randomizations;
 
 public class Prime {
     public static void game() {
@@ -12,7 +13,7 @@ public class Prime {
         Engine.logic(rule, specific);
     }
     public static void principle(String[][] specific, int i) {
-        final int number = (int) (Math.random() * Engine.RANDOM + 3); //conditional limit (not the first prime numbers)
+        final int number = Randomizations.generateNumber(3, Engine.RANDOM); //not the first prime numbers
         specific[i][0] = "" + number;
         specific[i][1] = (Prime.isPrime(number)) ? "yes" : "no";
     }
