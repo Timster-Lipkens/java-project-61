@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Randomizations;
 
 public class Progression {
+
     public static void game() {
         final String rule = "What number is missing in the progression?";
         String[][] specific = new String[Engine.ROUNDS][2]; //rounds and question-solution
@@ -12,6 +13,7 @@ public class Progression {
         }
         Engine.logic(rule, specific);
     }
+
     public static void principle(String[][] specific, int i) {
         int number = Randomizations.generateNumber(1, Engine.RANDOM); //conditional limit (natural numbers)
         final int step = Randomizations.generateNumber(-10, 10); //the step is not only positive
@@ -23,6 +25,7 @@ public class Progression {
         progression[secret] = ".."; //we hide the secret
         specific[i][0] = String.join(" ", progression);
     }
+
     public static String[] makeProgression(int number, int step, int numbers) {
         String[] result = new String[numbers];
         result[0] = "" + number;
@@ -32,4 +35,5 @@ public class Progression {
         }
         return result;
     }
+
 }

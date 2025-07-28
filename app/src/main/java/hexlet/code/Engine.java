@@ -4,12 +4,14 @@ import java.util.Scanner;
 public class Engine {
     public static final int ROUNDS = 3;
     public static final int RANDOM = 100;
+
     public static void logic(String rule, String[][] specific) {
         System.out.println("Welcome to the Brain Games!"); //name
         System.out.print("May I have your name? ");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
         System.out.println("Hello, " + name + "!");
+
         System.out.println(rule); //body
         boolean check = true;
         for (int i = 0; i < ROUNDS; i++) {
@@ -26,6 +28,7 @@ public class Engine {
                 break;
             }
         }
+
         if (check) {
             System.out.println("Congratulations, " + name + "!"); //result
         } else {
