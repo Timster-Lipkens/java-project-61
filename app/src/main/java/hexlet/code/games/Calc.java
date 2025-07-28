@@ -15,7 +15,7 @@ public class Calc {
     public static void principle(String[][] specific, int i) {
         int number1 = Randomizations.generateNumber(0, Engine.RANDOM); //conditional limit
         final char[] operations = {'+', '-', '*', '+'}; //fourth option for improbably Math.random() == 1
-        final char operation = operations[Randomizations.generateNumber(0, 3)]; //three options are equiprobable
+        final char operation = operations[Randomizations.generateNumber(0, 2 + 1)]; //three options are equiprobable
         int number2 = Randomizations.generateNumber(0, Engine.RANDOM);
         specific[i][0] = number1 + " " + operation + " " + number2;
         specific[i][1] = "" + Calc.calculate(number1, operation, number2);
