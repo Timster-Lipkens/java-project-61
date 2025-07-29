@@ -14,16 +14,16 @@ public class Engine {
 
         System.out.println(rule); //body
         boolean check = true;
-        for (int i = 0; i < ROUNDS; i++) {
+        for (String[] roundData : specific) {
             System.out.print("Question: ");
-            System.out.println(specific[i][0]);
+            System.out.println(roundData[0]);
             System.out.print("Your answer: ");
             Scanner scanner2 = new Scanner(System.in);
             String answer = scanner2.nextLine();
-            if (specific[i][1].equals(answer)) {
+            if (roundData[1].equals(answer)) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + specific[i][1] + "'.");
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + roundData[1] + "'.");
                 check = false;
                 break;
             }
